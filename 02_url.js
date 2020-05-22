@@ -6,8 +6,8 @@ http.createServer((req, res) => {
   if (req.url !== '/favicon.ico') {
     const result = url.parse(req.url, true)
     console.log(JSON.parse(JSON.stringify(result.query)))
-    console.log(result.query.userName); // jsliang
-    console.log(result.query.userAge); // 23
+    console.log(result.query.userName);
+    console.log(result.query.userAge);
   }
   res.end()
 }).listen(3000)
