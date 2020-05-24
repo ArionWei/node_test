@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>谈谈变量提升 | 前端小册</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/images/js.ico">
+    <meta name="description" content="打发无聊时间">
+    <link rel="preload" href="/assets/css/0.styles.ca5c4667.css" as="style"><link rel="preload" href="/assets/js/app.5743bccf.js" as="script"><link rel="preload" href="/assets/js/2.7309e51e.js" as="script"><link rel="preload" href="/assets/js/10.6d285136.js" as="script"><link rel="prefetch" href="/assets/js/11.32ab7215.js"><link rel="prefetch" href="/assets/js/12.5ba974e5.js"><link rel="prefetch" href="/assets/js/13.c1d31d71.js"><link rel="prefetch" href="/assets/js/14.a46d389f.js"><link rel="prefetch" href="/assets/js/15.72140b49.js"><link rel="prefetch" href="/assets/js/16.2eb40574.js"><link rel="prefetch" href="/assets/js/17.bce09615.js"><link rel="prefetch" href="/assets/js/18.6aaa460a.js"><link rel="prefetch" href="/assets/js/19.25f893c5.js"><link rel="prefetch" href="/assets/js/20.9c4a86a5.js"><link rel="prefetch" href="/assets/js/21.1f12ef39.js"><link rel="prefetch" href="/assets/js/22.d67b2e00.js"><link rel="prefetch" href="/assets/js/23.fac834ee.js"><link rel="prefetch" href="/assets/js/24.3fdfcb63.js"><link rel="prefetch" href="/assets/js/25.2826a9ae.js"><link rel="prefetch" href="/assets/js/26.cc53cc93.js"><link rel="prefetch" href="/assets/js/27.5fc7e5e2.js"><link rel="prefetch" href="/assets/js/28.7aead631.js"><link rel="prefetch" href="/assets/js/29.ab381928.js"><link rel="prefetch" href="/assets/js/3.5d9ab17c.js"><link rel="prefetch" href="/assets/js/30.221cae51.js"><link rel="prefetch" href="/assets/js/31.f50abb42.js"><link rel="prefetch" href="/assets/js/32.1fe21462.js"><link rel="prefetch" href="/assets/js/33.b456e34d.js"><link rel="prefetch" href="/assets/js/34.afcb59f8.js"><link rel="prefetch" href="/assets/js/35.5faa099c.js"><link rel="prefetch" href="/assets/js/4.3cb7a180.js"><link rel="prefetch" href="/assets/js/5.978d519c.js"><link rel="prefetch" href="/assets/js/6.671cdc11.js"><link rel="prefetch" href="/assets/js/7.cba998b1.js"><link rel="prefetch" href="/assets/js/8.7a5ab7c1.js"><link rel="prefetch" href="/assets/js/9.efb0f148.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ca5c4667.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端小册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tutorials/" class="nav-link">
+  基础进阶
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link router-link-active">
+  面试积累
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tutorials/" class="nav-link">
+  基础进阶
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link router-link-active">
+  面试积累
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS 相关</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/js/variable_hoisting.html" class="active sidebar-link">谈谈变量提升</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/interview/js/call,apply,bind.html" class="sidebar-link">call，apply，bind</a></li><li><a href="/interview/js/typeof_instanceof.html" class="sidebar-link">typeof 与 instanceof</a></li><li><a href="/interview/js/throttle_debounce.html" class="sidebar-link">函数节流与防抖</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="谈谈变量提升"><a href="#谈谈变量提升" class="header-anchor">#</a> 谈谈变量提升</h1> <p>从概念的字面意义上说，“变量提升”意味着变量和函数的声明会在物理层面移动到代码的最前面，但这么说并不准确。
+实际上变量和函数声明在代码里的位置是不会动的，而是在编译阶段优先被放入内存中。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// this is fun</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'Hello world'</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'this is fun'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="函数提升优于变量提升"><a href="#函数提升优于变量提升" class="header-anchor">#</a> 函数提升优于变量提升</h3> <p>函数和变量相比，会被优先提升。这意味着函数会被提升到更靠前的位置。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// second bar</span>
+
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'first bar'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'second bar'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> bar <span class="token operator">=</span> <span class="token string">'Hello world'</span>
+</code></pre></div><p>上面例子为什么会输出<code>second bar</code>？</p> <p>函数在提升的过程中，<code>function</code>的「创建」「初始化」和「赋值」都被提升了。
+而<code>var</code>只有「创建」和「初始化」被提升了。</p> <p>上面的例子提升情况可被理解为如下情况：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">bar</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'first bar'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> <span class="token function-variable function">bar</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'second bar'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> bar
+
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// second bar</span>
+
+bar <span class="token operator">=</span> <span class="token string">'Hello world'</span>
+</code></pre></div><h3 id="let、const-声明的变量也会存在变量提升"><a href="#let、const-声明的变量也会存在变量提升" class="header-anchor">#</a> let、const 声明的变量也会存在变量提升</h3> <p>使用<code>let</code>关键字和<code>const</code>声明的变量也会存在变量提升，但与<code>var</code>不同，<code>let</code>和<code>const</code>的「初始化」并没有被提升。</p> <p>在我们声明（初始化）它们之前，它们是不可访问的。 这被称为“暂时性死区”（temporal dead zone，简称 TDZ）。
+当我们在使用<code>let</code>或<code>const</code>声明变量之前尝试访问变量时，JavaScript 会抛出一个 ReferenceError。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">&quot;first&quot;</span>
+<span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// ReferenceError: Cannot access 'a' before initialization</span>
+  <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">&quot;second&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>let</code>变量如果不存在变量提升，<code>console.log(a)</code>就会输出 first，结果却抛出了ReferenceError。</p> <p>那么就说明了，<code>let</code>也存在变量提升，但是在提升过程中并未初始化，所以它存在一个“暂时性死区”，在变量未初始化或赋值前不允许访问。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/interview/js/call,apply,bind.html">
+        call，apply，bind
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.5743bccf.js" defer></script><script src="/assets/js/2.7309e51e.js" defer></script><script src="/assets/js/10.6d285136.js" defer></script>
+  </body>
+</html>

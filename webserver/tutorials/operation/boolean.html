@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>布尔运算符 | 前端小册</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/images/js.ico">
+    <meta name="description" content="打发无聊时间">
+    <link rel="preload" href="/assets/css/0.styles.ca5c4667.css" as="style"><link rel="preload" href="/assets/js/app.5743bccf.js" as="script"><link rel="preload" href="/assets/js/2.7309e51e.js" as="script"><link rel="preload" href="/assets/js/30.221cae51.js" as="script"><link rel="prefetch" href="/assets/js/10.6d285136.js"><link rel="prefetch" href="/assets/js/11.32ab7215.js"><link rel="prefetch" href="/assets/js/12.5ba974e5.js"><link rel="prefetch" href="/assets/js/13.c1d31d71.js"><link rel="prefetch" href="/assets/js/14.a46d389f.js"><link rel="prefetch" href="/assets/js/15.72140b49.js"><link rel="prefetch" href="/assets/js/16.2eb40574.js"><link rel="prefetch" href="/assets/js/17.bce09615.js"><link rel="prefetch" href="/assets/js/18.6aaa460a.js"><link rel="prefetch" href="/assets/js/19.25f893c5.js"><link rel="prefetch" href="/assets/js/20.9c4a86a5.js"><link rel="prefetch" href="/assets/js/21.1f12ef39.js"><link rel="prefetch" href="/assets/js/22.d67b2e00.js"><link rel="prefetch" href="/assets/js/23.fac834ee.js"><link rel="prefetch" href="/assets/js/24.3fdfcb63.js"><link rel="prefetch" href="/assets/js/25.2826a9ae.js"><link rel="prefetch" href="/assets/js/26.cc53cc93.js"><link rel="prefetch" href="/assets/js/27.5fc7e5e2.js"><link rel="prefetch" href="/assets/js/28.7aead631.js"><link rel="prefetch" href="/assets/js/29.ab381928.js"><link rel="prefetch" href="/assets/js/3.5d9ab17c.js"><link rel="prefetch" href="/assets/js/31.f50abb42.js"><link rel="prefetch" href="/assets/js/32.1fe21462.js"><link rel="prefetch" href="/assets/js/33.b456e34d.js"><link rel="prefetch" href="/assets/js/34.afcb59f8.js"><link rel="prefetch" href="/assets/js/35.5faa099c.js"><link rel="prefetch" href="/assets/js/4.3cb7a180.js"><link rel="prefetch" href="/assets/js/5.978d519c.js"><link rel="prefetch" href="/assets/js/6.671cdc11.js"><link rel="prefetch" href="/assets/js/7.cba998b1.js"><link rel="prefetch" href="/assets/js/8.7a5ab7c1.js"><link rel="prefetch" href="/assets/js/9.efb0f148.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ca5c4667.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端小册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tutorials/" class="nav-link router-link-active">
+  基础进阶
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试积累
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tutorials/" class="nav-link router-link-active">
+  基础进阶
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试积累
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础语法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数据类型</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>运算符</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tutorials/operation/count.html" class="sidebar-link">算术运算符</a></li><li><a href="/tutorials/operation/compare.html" class="sidebar-link">比较运算符</a></li><li><a href="/tutorials/operation/boolean.html" class="active sidebar-link">布尔运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tutorials/operation/boolean.html#逻辑非运算符（-）" class="sidebar-link">逻辑非运算符（!）</a></li><li class="sidebar-sub-header"><a href="/tutorials/operation/boolean.html#逻辑与运算符（-）" class="sidebar-link">逻辑与运算符（&amp;&amp;）</a></li><li class="sidebar-sub-header"><a href="/tutorials/operation/boolean.html#逻辑或运算符（-）" class="sidebar-link">逻辑或运算符（||）</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>内置对象</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="布尔运算符"><a href="#布尔运算符" class="header-anchor">#</a> 布尔运算符</h1> <p>布尔运算符用于将表达式转为布尔值，一共包含三个运算符。</p> <ul><li>逻辑非运算符：<code>!</code></li> <li>逻辑与运算符：<code>&amp;&amp;</code></li> <li>逻辑或运算符：<code>||</code></li></ul> <h2 id="逻辑非运算符（-）"><a href="#逻辑非运算符（-）" class="header-anchor">#</a> 逻辑非运算符（!）</h2> <p>取反运算符是一个感叹号，用于将布尔值变为相反值，即<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">!</span><span class="token boolean">true</span> <span class="token comment">// false</span>
+<span class="token operator">!</span><span class="token boolean">false</span> <span class="token comment">// true</span>
+</code></pre></div><p>对于非布尔值，<code>!</code>(逻辑非)运算符会将其转为布尔值。
+以下六个值取反后为<code>true</code>，其他值都为<code>false</code>。</p> <ul><li><code>undefined</code></li> <li><code>null</code></li> <li><code>false</code></li> <li><code>0</code></li> <li><code>NaN</code></li> <li>空字符串（<code>''</code>）</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">!</span><span class="token keyword">undefined</span> <span class="token comment">// true</span>
+<span class="token operator">!</span><span class="token keyword">null</span> <span class="token comment">// true</span>
+<span class="token operator">!</span><span class="token number">0</span> <span class="token comment">// true</span>
+<span class="token operator">!</span><span class="token number">NaN</span> <span class="token comment">// true</span>
+<span class="token operator">!</span><span class="token string">&quot;&quot;</span> <span class="token comment">// true</span>
+
+<span class="token operator">!</span><span class="token number">54</span> <span class="token comment">// false</span>
+<span class="token operator">!</span><span class="token string">'hello'</span> <span class="token comment">// false</span>
+<span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// false</span>
+<span class="token operator">!</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// false</span>
+</code></pre></div><p>如果对一个值使用双重非（!!）运算符，等于将其转为对应的布尔值，与<code>Boolean</code>函数的作用相同。
+这是一种常用的类型转换的写法。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">!</span><span class="token operator">!</span>x
+<span class="token comment">// 等同于</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</code></pre></div><p>上面代码中，不管<code>x</code>是什么类型的值，使用双重非（!!）运算符后，变成了与<code>Boolean</code>函数结果相同的布尔值。
+所以，使用双重非（!!）运算符就是将一个值转为布尔值的简便写法。</p> <h2 id="逻辑与运算符（-）"><a href="#逻辑与运算符（-）" class="header-anchor">#</a> 逻辑与运算符（&amp;&amp;）</h2> <p>它的运算规则是：如果第一个运算项的布尔值为<code>true</code>，则返回第二个运算项的值（注意是值，不是布尔值）；
+如果第一个运算项的布尔值为<code>false</code>，则直接返回第一个运算项的值，且不再对第二个运算项求值（短路计算）。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token string">'t'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">''</span> <span class="token comment">// &quot;&quot;</span>
+<span class="token string">'t'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'f'</span> <span class="token comment">// &quot;f&quot;</span>
+<span class="token string">'t'</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// 3</span>
+<span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'f'</span> <span class="token comment">// &quot;&quot;</span>
+<span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">undefined</span> <span class="token comment">// &quot;&quot;</span>
+
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span> x <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
+x <span class="token comment">// 1</span>
+</code></pre></div><p>这种跳过第二个运算子的机制，被称为“短路”。
+有些人喜欢用它取代<code>if</code>结构，比如下面是一段<code>if</code>结构的代码，就可以用且运算符改写。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 等价于</span>
+
+i <span class="token operator">&amp;&amp;</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><code>&amp;&amp;</code>(逻辑与)运算符可以多个连用，这时返回第一个布尔值为<code>false</code>的表达式的值。如果所有表达式的布尔值都为<code>true</code>，则返回最后一个表达式的值。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'foo'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'bar'</span> <span class="token operator">&amp;&amp;</span> <span class="token boolean">true</span>
+<span class="token comment">// ''</span>
+
+<span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> <span class="token number">3</span>
+<span class="token comment">// 3</span>
+</code></pre></div><h2 id="逻辑或运算符（-）"><a href="#逻辑或运算符（-）" class="header-anchor">#</a> 逻辑或运算符（||）</h2> <p>它的运算规则是：如果第一个运算项的布尔值为<code>true</code>，则返回第一个运算项的值，且不再对第二个运算项求值；
+如果第一个运算项的布尔值为<code>false</code>，则返回第二个运算项的值。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token string">'t'</span> <span class="token operator">||</span> <span class="token string">''</span> <span class="token comment">// &quot;t&quot;</span>
+<span class="token number">123</span> <span class="token operator">||</span> <span class="token string">'f'</span> <span class="token comment">// 123</span>
+<span class="token string">''</span> <span class="token operator">||</span> <span class="token string">'f'</span> <span class="token comment">// &quot;f&quot;</span>
+<span class="token string">''</span> <span class="token operator">||</span> <span class="token string">''</span> <span class="token comment">// &quot;&quot;</span>
+</code></pre></div><p>短路规则对这个运算符也适用。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token boolean">true</span> <span class="token operator">||</span> <span class="token punctuation">(</span>x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+x <span class="token comment">// 1</span>
+</code></pre></div><p>上面代码中，<code>||</code>(逻辑或)运算符的第一个运算项为<code>true</code>，所以直接返回<code>true</code>，不再运行第二个运算项。所以，<code>x</code>的值没有改变。
+这种只通过第一个表达式的值，控制是否运行第二个表达式的机制，就称为“短路”。</p> <p><code>||</code>(逻辑或)运算符可以多个连用，这时返回第一个布尔值为<code>true</code>的表达式的值。如果所有表达式都为<code>false</code>，则返回最后一个表达式的值。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token boolean">false</span> <span class="token operator">||</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token string">''</span> <span class="token operator">||</span> <span class="token number">4</span> <span class="token operator">||</span> <span class="token string">'foo'</span> <span class="token operator">||</span> <span class="token boolean">true</span>
+<span class="token comment">// 4</span>
+
+<span class="token boolean">false</span> <span class="token operator">||</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token string">''</span>
+<span class="token comment">// ''</span>
+</code></pre></div><p><code>||</code>(逻辑或)运算符常用于为一个变量设置默认值。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">saveText</span><span class="token punctuation">(</span><span class="token parameter">text</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  text <span class="token operator">=</span> text <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 或者写成</span>
+<span class="token function">saveText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>text <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tutorials/operation/compare.html" class="prev">
+        比较运算符
+      </a></span> <span class="next"><a href="/tutorials/stdlib/object.html">
+        Object 对象
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.5743bccf.js" defer></script><script src="/assets/js/2.7309e51e.js" defer></script><script src="/assets/js/30.221cae51.js" defer></script>
+  </body>
+</html>
