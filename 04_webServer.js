@@ -31,9 +31,11 @@ http.createServer((req, res) => {
           }
         })
       } else {
-        const ext = getExt(extName)
+        const extdata = fs.readFileSync('./ext.json')
+        const exts = JSON.parse(extdata.toString())
+        // const ext = getExt(extName)
         res.writeHead(200, {
-          'Content-Type': ext + ';charset=UTF-8'
+          'Content-Type': exts[extName] + ';charset=UTF-8'
         })
         res.end(data)
       }
